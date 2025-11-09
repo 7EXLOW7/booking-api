@@ -1,4 +1,5 @@
 {
-  "migrations-folder": "src/database/migrations"
+  "migrations-folder": "src/database/migrations",
+  "database-url-env": "DATABASE_URL"
 }
 
