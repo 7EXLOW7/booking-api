@@ -7,8 +7,10 @@
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
-    "migrate:up": "cross-env DATABASE_URL=$(node -e \"require('./src/config/migrateConfig.ts').then(m => console.log(m.databaseUrl))\" || node -p \"require('dotenv').config(); require('./src/config/migrateConfig').databaseUrl\") node-pg-migrate up -j ts",
-    "migrate:down": "cross-env DATABASE_URL=$(node -p \"require('dotenv').config(); require('./src/config/migrateConfig').databaseUrl\") node-pg-migrate down -j ts"
+    "migrate:up": "node-pg-migrate up -j ts",
+    "migrate:down": "node-pg-migrate down -j ts",
+    "setup-db": "node setup-database.js",
+    "reset-db": "node reset-database.js"
   },
   "keywords": [],
   "author": "",
